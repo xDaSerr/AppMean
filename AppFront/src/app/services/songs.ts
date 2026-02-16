@@ -1,0 +1,25 @@
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class SongsService {
+  
+  httpClient = inject(HttpClient);
+  baseUrl = 'http://127.0.0.1:3000/api/songs';
+
+  getAll(){
+    return firstValueFrom(
+      this.httpClient.get<any[]>(this.baseUrl)
+    );
+  }
+ 
+  getById(songId: string){
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/${songId}`)
+    );
+  }   
+
+}

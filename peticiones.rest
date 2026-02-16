@@ -1,0 +1,5 @@
+### Songs
+GET http://127.0.0.1:3000/api/songs
+
+###
+GET http://127.0.0.1:3000/api/songs/69917e5caafc23484a8fb159
