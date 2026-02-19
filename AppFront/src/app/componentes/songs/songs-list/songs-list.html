@@ -1,5 +1,22 @@
-<ul>
-  <li *ngFor="let song of arrSongs()" [routerLink]="['/songs', song._id]">
-    {{ song.title }}
-  </li>
-</ul>
+<!-- songs-list.html -->
+<div class="songs-container">
+  <div class="songs-header">
+    <div class="header-left">
+      <button class="btn-back" routerLink="/">← Inicio</button>
+      <h2 class ="Titulo">🎶Lista de Canciones🎶</h2>
+    </div>
+    <button class="btn-add" routerLink="/songs/add">+ Agregar Canción</button>
+  </div>
+
+  <ul class="songs-list">
+    <li *ngFor="let song of arrSongs()" [routerLink]="['/songs', song._id]" class="song-item">
+      <span class="song-icon">🎵</span>
+      <span class="song-title">{{ song.title }}</span>
+      <span class="song-arrow"></span>
+    </li>
+  </ul>
+
+  <p class="empty-msg" *ngIf="arrSongs().length === 0">
+    No hay canciones aún. ¡Agrega la primera!
+  </p>
+</div>

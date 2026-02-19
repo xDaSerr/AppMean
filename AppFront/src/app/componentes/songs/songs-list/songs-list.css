@@ -1,0 +1,119 @@
+/* songs-list.css */
+.songs-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.Titulo {
+  text-align: center;
+  padding: 30px 20px;
+}
+.songs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.songs-header h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.btn-back {
+  padding: 9px 20px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-back:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.btn-add {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #e94560, #c0392b);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.btn-add:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(233, 69, 96, 0.55);
+}
+
+.songs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  color: #fff;
+}
+
+.song-item:hover {
+  background: rgba(233, 69, 96, 0.15);
+  transform: translateX(4px);
+  border-color: rgba(233, 69, 96, 0.4);
+}
+
+.song-icon {
+  font-size: 1.4rem;
+}
+
+.song-title {
+  flex: 1;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.song-arrow {
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.empty-msg {
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  margin-top: 40px;
+  font-size: 1rem;
+}
