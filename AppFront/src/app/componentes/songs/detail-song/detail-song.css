@@ -1,17 +1,30 @@
+/* detail-song.css */
+/* Tema oscuro coherente con songs-list.css y add-song.css */
+
+/* ── Contenedor principal ── */
 .detail-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* ── Tarjeta central ── */
 .detail-card {
-  background: white;
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px 48px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 700px;
 }
 
-/* Header */
+/* ── Header ── */
 .detail-header {
   display: flex;
   justify-content: space-between;
@@ -20,206 +33,250 @@
 }
 
 .back-btn {
-  background: #667eea;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 9px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
 }
 
 .back-btn:hover {
-  background: #5568d3;
-  transform: translateX(-5px);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-4px);
 }
 
 .explicit-badge {
-  background: #ff4444;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: bold;
+  background: linear-gradient(135deg, #e94560, #c0392b);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
 }
 
-/* Album Art */
+/* ── Album Art ── */
 .album-art {
   width: 100%;
-  height: 300px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 15px;
+  height: 260px;
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.3) 0%, rgba(102, 126, 234, 0.3) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
-  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.album-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(233, 69, 96, 0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(102, 126, 234, 0.15) 0%, transparent 60%);
 }
 
 .music-icon {
-  font-size: 8rem;
-  opacity: 0.9;
+  font-size: 7rem;
+  opacity: 0.85;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
 }
 
-/* Title Section */
+/* ── Título y Artista ── */
 .title-section {
   text-align: center;
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid #eee;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .song-title {
-  font-size: 2.5rem;
-  color: #333;
-  margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin: 0 0 0.4rem 0;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .song-artist {
-  font-size: 1.8rem;
-  color: #667eea;
+  font-size: 1.4rem;
+  color: #e94560;
   margin: 0;
   font-weight: 500;
+  opacity: 0.9;
 }
 
-/* Details Grid */
+/* ── Grilla de detalles ── */
 .details-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
   margin-bottom: 2rem;
 }
 
 .detail-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1.2rem;
-  background: #f8f9fa;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
 }
 
 .detail-item:hover {
-  background: #e9ecef;
+  background: rgba(233, 69, 96, 0.1);
+  border-color: rgba(233, 69, 96, 0.3);
   transform: translateY(-2px);
 }
 
 .detail-icon {
-  font-size: 2rem;
-  width: 50px;
-  height: 50px;
+  font-size: 1.6rem;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .detail-content {
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
 }
 
 .detail-label {
-  font-size: 0.85rem;
-  color: #888;
-  font-weight: 500;
-  margin-bottom: 0.2rem;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
 }
 
 .detail-value {
-  font-size: 1.1rem;
-  color: #333;
+  font-size: 1rem;
+  color: #ffffff;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Action Buttons */
+/* ── Botones de acción ── */
 .action-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 14px;
   justify-content: center;
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 2px solid #eee;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .edit-btn,
 .delete-btn {
-  padding: 1rem 2rem;
+  padding: 13px 0;
   border: none;
-  border-radius: 25px;
+  border-radius: 50px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
   flex: 1;
-  max-width: 200px;
+  max-width: 210px;
 }
 
 .edit-btn {
-  background: #667eea;
-  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.35);
 }
 
 .edit-btn:hover {
-  background: #5568d3;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 28px rgba(102, 126, 234, 0.5);
 }
 
 .delete-btn {
-  background: #ff4444;
-  color: white;
+  background: rgba(233, 69, 96, 0.15);
+  color: #e94560;
+  border: 1px solid rgba(233, 69, 96, 0.4);
 }
 
 .delete-btn:hover {
-  background: #cc0000;
+  background: linear-gradient(135deg, #e94560, #c0392b);
+  color: #ffffff;
+  border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 68, 68, 0.4);
+  box-shadow: 0 10px 28px rgba(233, 69, 96, 0.45);
 }
 
-/* Formulario de Edición */
+/* ── Formulario de edición ── */
 .form-title {
-  font-size: 2rem;
-  color: #667eea;
+  font-size: 1.9rem;
+  color: #ffffff;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .form-group label {
   display: block;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
 .form-group input[type="text"],
 .form-group input[type="number"] {
   width: 100%;
-  padding: 0.8rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  color: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-sizing: border-box;
 }
 
-.form-group input:focus {
+.form-group input[type="text"]::placeholder,
+.form-group input[type="number"]::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #e94560;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.2);
 }
 
+/* ── Checkbox ── */
 .checkbox-group {
   display: flex;
   align-items: center;
@@ -228,179 +285,201 @@
 .checkbox-group label {
   display: flex;
   align-items: center;
+  gap: 10px;
   cursor: pointer;
   margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  font-weight: 600;
+  user-select: none;
 }
 
 .checkbox-group input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  margin-right: 10px;
+  accent-color: #e94560;
   cursor: pointer;
+  border-radius: 4px;
 }
 
+/* ── Botones del formulario ── */
 .form-buttons {
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 14px;
+  margin-top: 32px;
 }
 
 .btn-submit,
 .btn-cancel {
   flex: 1;
-  padding: 1rem;
+  padding: 14px;
   border: none;
-  border-radius: 25px;
+  border-radius: 50px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .btn-submit {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #e94560, #c0392b);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
 }
 
 .btn-submit:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 28px rgba(233, 69, 96, 0.55);
 }
 
 .btn-submit:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn-cancel {
-  background: #e0e0e0;
-  color: #333;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn-cancel:hover {
-  background: #d0d0d0;
+  background: rgba(255, 255, 255, 0.14);
   transform: translateY(-2px);
 }
 
-/* Mensajes */
+/* ── Mensajes de estado ── */
 .success-message {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-  border-radius: 10px;
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: rgba(39, 174, 96, 0.15);
+  color: #2ecc71;
+  border: 1px solid rgba(39, 174, 96, 0.3);
+  border-radius: 12px;
   text-align: center;
   font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .error-message {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  border-radius: 10px;
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: rgba(233, 69, 96, 0.15);
+  color: #e94560;
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  border-radius: 12px;
   text-align: center;
   font-weight: 600;
+  font-size: 0.95rem;
 }
 
-/* Modal de Confirmación */
+/* ── Modal de confirmación ── */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  padding: 20px;
 }
 
 .modal-content {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 20px;
-  max-width: 500px;
-  width: 90%;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  background: #16213e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 40px;
+  border-radius: 24px;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
 .modal-content h2 {
-  color: #ff4444;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+  color: #e94560;
+  margin: 0 0 1rem;
+  font-size: 1.7rem;
+  font-weight: 700;
 }
 
 .modal-content p {
-  color: #333;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .song-name {
-  font-weight: bold;
-  color: #667eea;
-  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1.05rem;
 }
 
 .warning-text {
-  color: #ff4444;
+  color: rgba(233, 69, 96, 0.85);
   font-weight: 600;
-  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
 .modal-buttons {
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 14px;
+  margin-top: 28px;
 }
 
 .btn-confirm-delete,
 .btn-cancel-modal {
   flex: 1;
-  padding: 1rem;
+  padding: 13px;
   border: none;
-  border-radius: 25px;
+  border-radius: 50px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .btn-confirm-delete {
-  background: #ff4444;
-  color: white;
+  background: linear-gradient(135deg, #e94560, #c0392b);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
 }
 
 .btn-confirm-delete:hover {
-  background: #cc0000;
   transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(233, 69, 96, 0.55);
 }
 
 .btn-cancel-modal {
-  background: #e0e0e0;
-  color: #333;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn-cancel-modal:hover {
-  background: #d0d0d0;
+  background: rgba(255, 255, 255, 0.14);
   transform: translateY(-2px);
 }
 
+/* ── Responsive ── */
 @media (max-width: 768px) {
   .detail-card {
-    padding: 1.5rem;
+    padding: 28px 20px;
   }
 
   .song-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .song-artist {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .details-grid {
@@ -416,5 +495,17 @@
   .edit-btn,
   .delete-btn {
     max-width: 100%;
+  }
+
+  .album-art {
+    height: 200px;
+  }
+
+  .music-icon {
+    font-size: 5rem;
+  }
+
+  .modal-content {
+    padding: 28px 22px;
   }
 }
