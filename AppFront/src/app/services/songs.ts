@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { firstValueFrom } from 'rxjs';
 export class SongsService {
 
   httpClient = inject(HttpClient);
-  baseUrl = 'http://127.0.0.1:3000/api/songs';
+  baseUrl = `${environment.apiUrl}/songs`;
 
   getAll(){
     return firstValueFrom(
