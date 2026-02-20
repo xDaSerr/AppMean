@@ -9,7 +9,9 @@ import { environment } from '../../environments/environment';
 export class SongsService {
 
   httpClient = inject(HttpClient);
+
   baseUrl = `${environment.apiUrl}/songs`;
+
 
   getAll(){
     return firstValueFrom(
@@ -23,21 +25,21 @@ export class SongsService {
     );
   }
 
-  // ⭐ NUEVO: Método para crear canciones
+  // Método para crear canciones
   create(song: any){
     return firstValueFrom(
       this.httpClient.post<any>(this.baseUrl, song)
     );
   }
 
-   // ⭐ NUEVO: Eliminar canción
+   //  Eliminar canción
   delete(songId: string){
     return firstValueFrom(
       this.httpClient.delete<any>(`${this.baseUrl}/${songId}`)
     );
   }
 
-  // ⭐ NUEVO: Actualizar canción
+  // Actualizar canción
   update(songId: string, song: any){
     return firstValueFrom(
       this.httpClient.put<any>(`${this.baseUrl}/${songId}`, song)
